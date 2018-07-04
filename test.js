@@ -1,0 +1,3 @@
+function testfunction() {
+    $("#AppFrameMain").html("");
+}

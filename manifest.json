@@ -1,0 +1,16 @@
+{
+  "name": "Shopify Bookings",
+  "description": "Launch shopify Bookings app",
+  "version": "1",
+  "manifest_version": 3,
+  "icons": {
+    "16": "icon.png",
+    "128": "icon.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://*.myshopify.com/admin/*"],
+      "js": ["content.js"]
+    }
+  ]
+ }

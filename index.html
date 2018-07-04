@@ -1,22 +1,240 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>Hello, world!</title>
-  </head>
-  <body>
-    <h1>Hello, world!</h1>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/css/bootstrap-datepicker3.standalone.min.css"
+  />
+  <title>Shopify Bookings Generator</title>
+</head>
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
-  </body>
+<body>
+  <form id="BookingForm">
+    <div class="container">
+      <div class="card mt-3">
+        <div class="card-header">
+          Store Settings
+        </div>
+        <div class="card-body">
+
+          <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Store URL</label>
+            <div class="col-sm-10">
+              <div class="input-group">
+                <input type="text" class="form-control" placeholder="Store URL" name="shop-url">
+                <div class="input-group-append">
+                  <span class="input-group-text" id="basic-addon2">.myshopify.com</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label class="col-sm-2 col-form-label">API Key</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" placeholder="API Key" name="api-key">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-sm-2 col-form-label">API Password</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" placeholder="API Password" name="api-password">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mt-3">
+        <div class="card-header">
+          Booking Settings
+        </div>
+        <div class="card-body">
+          <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Date Range</label>
+            <div class="col-sm-10">
+              <div class="input-group input-daterange" data-provide="datepicker" data-date-format="DD, MM d, yyyy">
+                <input type="text" class="form-control" name="date-from">
+                <div class="input-group-append input-group-prepend">
+                  <div class="input-group-text">to</div>
+                </div>
+                <input type="text" class="form-control" name="date-to">
+              </div>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Available</label>
+            <div class="col-sm-10">
+              <div class="input-group">
+                <select class="form-control" name="available-from">
+                  <option value="0">None</option>
+                  <option value="1">01:00AM</option>
+                  <option value="2">02:00AM</option>
+                  <option value="3">03:00AM</option>
+                  <option value="4">04:00AM</option>
+                  <option value="5">05:00AM</option>
+                  <option value="6">06:00AM</option>
+                  <option value="7">07:00AM</option>
+                  <option value="8">08:00AM</option>
+                  <option value="9">09:00AM</option>
+                  <option value="10">10:00AM</option>
+                  <option value="11">11:00AM</option>
+                  <option value="12">12:00PM</option>
+                  <option value="13">01:00PM</option>
+                  <option value="14">02:00PM</option>
+                  <option value="15">03:00PM</option>
+                  <option value="16">04:00PM</option>
+                  <option value="17">05:00PM</option>
+                  <option value="18">06:00PM</option>
+                  <option value="19">07:00PM</option>
+                  <option value="20">08:00PM</option>
+                  <option value="21">09:00PM</option>
+                  <option value="22">10:00PM</option>
+                  <option value="23">11:00PM</option>
+                  <option value="24">12:00PM</option>
+                </select>
+                <div class="input-group-append input-group-prepend">
+                  <div class="input-group-text">to</div>
+                </div>
+                <select class="form-control" name="available-to">
+                  <option value="0">None</option>
+                  <option value="1">01:00AM</option>
+                  <option value="2">02:00AM</option>
+                  <option value="3">03:00AM</option>
+                  <option value="4">04:00AM</option>
+                  <option value="5">05:00AM</option>
+                  <option value="6">06:00AM</option>
+                  <option value="7">07:00AM</option>
+                  <option value="8">08:00AM</option>
+                  <option value="9">09:00AM</option>
+                  <option value="10">10:00AM</option>
+                  <option value="11">11:00AM</option>
+                  <option value="12">12:00PM</option>
+                  <option value="13">01:00PM</option>
+                  <option value="14">02:00PM</option>
+                  <option value="15">03:00PM</option>
+                  <option value="16">04:00PM</option>
+                  <option value="17">05:00PM</option>
+                  <option value="18">06:00PM</option>
+                  <option value="19">07:00PM</option>
+                  <option value="20">08:00PM</option>
+                  <option value="21">09:00PM</option>
+                  <option value="22">10:00PM</option>
+                  <option value="23">11:00PM</option>
+                  <option value="24">12:00PM</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Calendar</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" name="calendar">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Price</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" name="price">
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="col-sm-10">
+              <button type="submit" class="btn btn-primary">Generate</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </form>
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" 
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/js/bootstrap-datepicker.min.js"></script>
+  <script>
+    var bookingData = {};
+    $("#BookingForm").submit(function (e) {
+
+      var productData = [];
+
+      bookingData = {
+        "calendar": $("[name=calendar]").val(),
+        "price": $("[name=price]").val(),
+        "available-from": $("[name=available-from]").val(),
+        "available-to": $("[name=available-to]").val(),
+        "date-from": $('[name=date-from]').datepicker('getDate'),
+        "date-to": $('[name=date-to]').datepicker('getDate'),
+        "api-password": $("[name=api-password]").val(),
+        "api-key": $("[name=api-key]").val(),
+        "shop-url": $("[name=shop-url]").val()
+      }
+
+      var variantData = [];
+
+      for (var i = 1; i <= 24; i++) {
+        var suffix = "AM";
+        var j = i;
+        var inv = 0;
+        if (i > 11) { suffix = "PM"; }
+        if (i > 12) { j = i - 12; }
+        if (i > 23) { suffix = "AM"; }
+        var name = ("00" + j).substr(-2, 2) + ":00" + suffix;
+        if (i >= bookingData["available-from"] && i <= bookingData["available-to"]) {
+          inv = 1;
+        }
+        variantData.push({
+          "title": name,
+          "price": parseInt(bookingData["price"]),
+          "inventory_policy": "deny",
+          "inventory_management": "shopify",
+          "inventory_quantity": inv,
+        });
+
+      }
+
+      for (var d = bookingData["date-from"]; d <= bookingData["date-to"]; d.setDate(d.getDate() + 1)) {
+        productData.push({
+          "title": d.toDateString(),
+          "vendor": bookingData["calendar"],
+          "product_type": "Booking",
+          "variants": variantData
+        });
+      }
+
+      productData.forEach(function (s) {
+        $.ajax({
+          url: 'https://' + bookingData["shop-url"] + '.myshopify.com/admin/products.json',
+          dataType: 'json',
+          type: 'post',
+          username: bookingData["api-key"],
+          password: bookingData["api-password"],
+          contentType: 'application/json',
+          data: JSON.stringify({ "first-name": $('#first-name').val(), "last-name": $('#last-name').val() }),
+          processData: false,
+          success: function (data, textStatus, jQxhr) {
+            console.log(data);
+          },
+          error: function (jqXhr, textStatus, errorThrown) {
+            console.log(errorThrown);
+          }
+        });
+      });
+
+      console.log(productData);
+
+      e.preventDefault();
+    });
+  </script>
+</body>
+
 </html>
