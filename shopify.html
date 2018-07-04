@@ -1,0 +1,193 @@
+<main id="AppFrameMain" class="ui-app-frame__main ">
+    <div class="wrapper" id="wrapper">
+        <div id="body" class="clearfix" data-tg-refresh="body">
+            <div class="" id="content">
+                <div id="settings-general" class="page">
+                    <form class="edit_shop" id="edit_shop_1209401438" autocomplete="off" action="/admin/settings/general" accept-charset="UTF-8"
+                        method="post">
+                        <header class="ui-title-bar-container">
+                            <div class="ui-title-bar ui-title-bar--separator">
+                                <div class="ui-title-bar__navigation">
+                                    <div class="ui-breadcrumbs">
+                                        <a href="#" class="ui-button ui-button--transparent ui-breadcrumb">
+                                            <svg class="next-icon next-icon--size-20 next-icon--no-nudge" aria-hidden="true" focusable="false">
+                                                <use xlink:href="#chevron-left-thinner"></use>
+                                            </svg>
+                                            <span class="ui-breadcrumb__item">Bookings</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="ui-title-bar__main-group">
+                                    <div class="ui-title-bar__heading-group">
+                                        <span class="ui-title-bar__icon">
+                                            <svg aria-hidden="true" focusable="false" class="next-icon next-icon--color-slate-lighter next-icon--size-20">
+                                                <use xlink:href="#next-settings"></use>
+                                            </svg>
+                                        </span>
+                                        <h1 class="ui-title-bar__title">Generate Schedule</h1>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="collapsible-header">
+                                <div class="collapsible-header__heading"></div>
+                            </div>
+                        </header>
+
+
+                        <section class="ui-annotated-section-container">
+                            <div class="ui-annotated-section">
+                                <div class="ui-annotated-section__annotation">
+                                    <div class="ui-annotated-section__title">
+                                        <h2 class="ui-heading">Booking Details</h2>
+                                    </div>
+                                    <div class="ui-annotated-section__description">
+                                        <p>Enter the following information to be able to generate booking products.</p>
+                                    </div>
+                                </div>
+                                <div class="ui-annotated-section__content">
+                                    <div class="next-card">
+                                        <div class="section-content">
+                                            <div class="next-card__section">
+                                                <div class="ui-form__section"></div>
+                                                <div class="ui-form__group">
+                                                    <div class="next-input-wrapper">
+                                                        <label class="next-label">Calendar Name</label>
+                                                        <input class="next-input" size="30" type="text" name="calendar">
+                                                        <p class="next-input__help-text">The value entered here should match existing 'Vendor' on other booking
+                                                            products.
+                                                        </p>
+                                                    </div>
+
+                                                    <div class="next-input-wrapper">
+                                                        <label class="next-label" for="price">Price</label>
+                                                        <input type="text" name="price" id="price">
+                                                        <p class="next-input__help-text">
+                                                            <span>Please do not enter dollar signs or other special characters</span>
+
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                </div>
+                </section>
+
+
+
+                <section class="ui-annotated-section-container">
+                    <div class="ui-annotated-section">
+                        <div class="ui-annotated-section__annotation">
+                            <div class="ui-annotated-section__title">
+                                <h2 class="ui-heading">Store address</h2>
+                            </div>
+                            <div class="ui-annotated-section__description">
+                                <p>This address will appear on your invoices. You can edit the address used to calculate shipping
+                                    rates in your
+                                    <a href="/admin/settings/shipping">shipping settings</a>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="ui-annotated-section__content">
+                            <div class="next-card">
+                                <div class="section-content">
+                                    <div class="next-card__section">
+                                        <div class="ui-form__section">
+                                            <div class="ui-form__group" define="{address: new Shopify.AddressOperations(this, &quot;Queensland&quot;)}">
+                                                <div class="next-input-wrapper">
+                                                    <label class="next-label">Availability start</label>
+                                                    <div class="ui-select__wrapper next-input--has-content">
+                                                        <select class="ui-select" name="available-from">
+                                                            <option value="0">None</option>
+                                                            <option value="1">01:00AM</option>
+                                                            <option value="2">02:00AM</option>
+                                                            <option value="3">03:00AM</option>
+                                                            <option value="4">04:00AM</option>
+                                                            <option value="5">05:00AM</option>
+                                                            <option value="6">06:00AM</option>
+                                                            <option value="7">07:00AM</option>
+                                                            <option value="8">08:00AM</option>
+                                                            <option value="9">09:00AM</option>
+                                                            <option value="10">10:00AM</option>
+                                                            <option value="11">11:00AM</option>
+                                                            <option value="12">12:00PM</option>
+                                                            <option value="13">01:00PM</option>
+                                                            <option value="14">02:00PM</option>
+                                                            <option value="15">03:00PM</option>
+                                                            <option value="16">04:00PM</option>
+                                                            <option value="17">05:00PM</option>
+                                                            <option value="18">06:00PM</option>
+                                                            <option value="19">07:00PM</option>
+                                                            <option value="20">08:00PM</option>
+                                                            <option value="21">09:00PM</option>
+                                                            <option value="22">10:00PM</option>
+                                                            <option value="23">11:00PM</option>
+                                                            <option value="24">12:00PM</option>
+                                                        </select>
+                                                        <svg aria-hidden="true" focusable="false" class="next-icon next-icon--size-16">
+                                                            <use xlink:href="#select-chevron"></use>
+                                                        </svg>
+                                                    </div>
+                                                </div>
+                                                <div class="next-input-wrapper">
+                                                    <label class="next-label">Availability end</label>
+                                                    <div class="ui-select__wrapper next-input--has-content">
+                                                        <select class="ui-select" name="available-to">
+                                                            <option value="0">None</option>
+                                                            <option value="1">01:00AM</option>
+                                                            <option value="2">02:00AM</option>
+                                                            <option value="3">03:00AM</option>
+                                                            <option value="4">04:00AM</option>
+                                                            <option value="5">05:00AM</option>
+                                                            <option value="6">06:00AM</option>
+                                                            <option value="7">07:00AM</option>
+                                                            <option value="8">08:00AM</option>
+                                                            <option value="9">09:00AM</option>
+                                                            <option value="10">10:00AM</option>
+                                                            <option value="11">11:00AM</option>
+                                                            <option value="12">12:00PM</option>
+                                                            <option value="13">01:00PM</option>
+                                                            <option value="14">02:00PM</option>
+                                                            <option value="15">03:00PM</option>
+                                                            <option value="16">04:00PM</option>
+                                                            <option value="17">05:00PM</option>
+                                                            <option value="18">06:00PM</option>
+                                                            <option value="19">07:00PM</option>
+                                                            <option value="20">08:00PM</option>
+                                                            <option value="21">09:00PM</option>
+                                                            <option value="22">10:00PM</option>
+                                                            <option value="23">11:00PM</option>
+                                                            <option value="24">12:00PM</option>
+                                                        </select>
+                                                        <svg aria-hidden="true" focusable="false" class="next-icon next-icon--size-16">
+                                                            <use xlink:href="#select-chevron"></use>
+                                                        </svg>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <div class="ui-page-actions">
+                    <div class="ui-page-actions__container">
+                        <div class="ui-page-actions__actions ui-page-actions__actions--primary">
+                            <div class="ui-page-actions__button-group">
+                                <button class="ui-button ui-button--primary js-btn-primary js-btn-loadable btn-primary has-loading" type="submit" name="commit"
+                                    disabled="disabled">Save</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+    </div>
+</main>
